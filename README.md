@@ -1,5 +1,6 @@
 # promo-crawler
 Crawlers para sites de promoção de produtos.
 
-- [x] Hardmob Promoções Crawler
-- [X] Adrenaline for sale Crawler
+- [x] Hardmob Promoções crawler
+- [x] Adrenaline for sale crawler
+- [x] Pelando API crawler

@@ -17,12 +17,8 @@ class AdrenalineSpider(scrapy.Spider):
             title = topic.css("a.title::text").get()
             url = topic.css("a.title::attr(href)").get()
             author = topic.css("a.username::text").get()
-            author_url = topic.css(
-                "dl.threadlastpost.td > a::attr(href)"
-            ).get()
-            day = topic.css(
-                "dl.threadlastpost.td dd:nth-of-type(2)::text"
-            ).get()
+            author_url = topic.css("dl.threadlastpost.td > a::attr(href)").get()
+            day = topic.css("dl.threadlastpost.td dd:nth-of-type(2)::text").get()
             time = topic.css(
                 "dl.threadlastpost.td dd:nth-of-type(2) > span::text"
             ).get()
@@ -30,9 +26,7 @@ class AdrenalineSpider(scrapy.Spider):
             now = now.strftime("%m/%d/%Y")
             creation_date = f"[{now}][{day}][{time}]"
             comments = topic.css("ul.threadstats.td.alt a::text").get()
-            views = topic.css(
-                "ul.threadstats.td.alt li:nth-of-type(2)::text"
-            ).get()
+            views = topic.css("ul.threadstats.td.alt li:nth-of-type(2)::text").get()
             views = views.split()[1] if views else views
 
             if not url:

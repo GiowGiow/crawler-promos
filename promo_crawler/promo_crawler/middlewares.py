@@ -21,9 +21,7 @@ class CloudflareMiddleware(object):
         logging.getLogger("websockets").setLevel(logging.INFO)
         return cls()
 
-    async def process_request(
-        self, request, spider
-    ) -> scrapy.http.HtmlResponse | None:
+    async def process_request(self, request, spider) -> scrapy.http.HtmlResponse | None:
         # Check if needed by this request
         if not request.meta.get("cloudflare", False):
             return None

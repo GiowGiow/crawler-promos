@@ -9,13 +9,9 @@ class AdrenalineSpider(scrapy.Spider):
 
     def parse(self, response) -> scrapy.http.Request:
         # Parse topics (not the fixed ones)
-        for topic in response.css(
-            "div.structItemContainer-group.js-threadList > div"
-        ):
+        for topic in response.css("div.structItemContainer-group.js-threadList > div"):
             title = topic.css("div.structItem-title > a::text").get()
-            topic_relative_url = topic.css(
-                "div.structItem-title > a::attr(href)"
-            ).get()
+            topic_relative_url = topic.css("div.structItem-title > a::attr(href)").get()
             author = topic.css("a.username ::text").get()
             author_url = topic.css("a.username ::attr(href)").get()
             unix_time = topic.css("time::attr(data-time)").get()
