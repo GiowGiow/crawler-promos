@@ -62,7 +62,7 @@ COMPRESSION_ENABLED = False
 # }
 
 DOWNLOADER_MIDDLEWARES = {
-    "promo_crawler.middlewares.CloudflareMiddleware": 543,
+    "promo_crawler.middlewares.CloudflareDownloaderMiddleware": 543,
 }
 
 # Enable asyncio support

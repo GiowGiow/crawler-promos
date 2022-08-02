@@ -12,7 +12,7 @@ import scrapy
 from scrapy import signals
 
 
-class CloudflareMiddleware(object):
+class CloudflareDownloaderMiddleware(object):
     def __init__(self):
         self.scraper = cloudscraper.create_scraper()
 

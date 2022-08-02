@@ -44,6 +44,7 @@ class AdrenalineSpider(scrapy.Spider):
                     "creation_date": creation_date,
                     "comments": comments,
                     "views": views,
+                    # use this to download using cloudflare middleware
                     "cloudflare": True,
                 },
             )
